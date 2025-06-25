@@ -1,0 +1,102 @@
+/* Variáveis de cor (tons pastéis) */
+:root {
+    --bg-navbar: #ffffff; /* Fundo branco */
+    --text-color: #4a4a4a; /* Cinza escuro */
+    --hover-color: #c9a8a8; /* Rosa pálido (efeito hover) */
+    --cta-color: #6d7b8d; /* Azul acinzentado (botão) */
+    --cta-hover: #5a6778; /* Azul mais escuro */
+}
+
+/* Navbar Principal */
+.navbar {
+    background-color: var(--bg-navbar);
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Links da Navbar */
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Efeito Hover (similar ao da Zoe Riggs) */
+.nav-link:hover {
+    color: var(--hover-color);
+}
+
+/* Sublinhado animado no hover */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--hover-color);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Botão de Agendamento (CTA) */
+.navbar-cta {
+    background-color: var(--cta-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.navbar-cta:hover {
+    background-color: var(--cta-hover);
+}
+
+/* Menu Mobile (opcional) */
+.navbar-mobile-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsivo (tablet/mobile) */
+@media (max-width: 768px) {
+    .navbar-links, .navbar-cta {
+        display: none;
+    }
+    .navbar-mobile-btn {
+        display: block;
+    }
+}
